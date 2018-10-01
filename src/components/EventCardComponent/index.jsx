@@ -9,7 +9,7 @@ export default class EventCardComponent extends Component {
       <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img src={this.props.featuredMedia[0].imageSrc} />
+            <img src={this.props.images[0].imageSrc} />
           </figure>
         </div>
         <div className="card-content">
@@ -21,7 +21,7 @@ export default class EventCardComponent extends Component {
           </div>
 
           <div className="content">
-            {this.props.subline.text}
+            {this.props.teaser.text}
             <br />
             <time dateTime={this.props.startDate}>{moment(this.props.startDate.dateTimeUTC).format('Qo of MMMM hA')} - {moment(this.props.endDate.dateTimeUTC).format('Qo of MMMM hA')}</time>
           </div>
@@ -49,10 +49,10 @@ EventCardComponent.propTypes = {
   endDate: PropTypes.shape({
     dateTimeUTC: PropTypes.string
   }),
-  subline: PropTypes.shape({
+  teaser: PropTypes.shape({
     text: PropTypes.string
   }),
-  featuredMedia: PropTypes.arrayOf(PropTypes.shape({
+  images: PropTypes.arrayOf(PropTypes.shape({
     imageSrc: PropTypes.string
   })),
   showRecommendedContentLink: PropTypes.bool

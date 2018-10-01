@@ -15,10 +15,10 @@ const demoEventProps = {
   endDate: {
     dateTimeUTC: '2018-09-08T13:00:00.000Z'
   },
-  subline: {
+  teaser: {
     text: 'Event subline'
   },
-  featuredMedia: [{
+  images: [{
     imageSrc: 'https://bulma.io/images/placeholders/1280x960.png'
   }],
   author: 'Manuel G'
