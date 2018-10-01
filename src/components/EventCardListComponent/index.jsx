@@ -5,6 +5,7 @@ import chunk from "../../utils/chunk"
 const eventCards = Array(18).fill(EventCardComponent)
 
 const demoEventProps = {
+  id: 'rrn:content:event-profiles:abcd:en-INT',
   title: {
     text: 'Test event'
   },

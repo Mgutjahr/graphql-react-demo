@@ -4,8 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBarComponent from "./components/NavBarComponent"
 import UpcomingEventListingComponent from "./components/UpcomingEventListingComponent"
 import PastEventListingComponent from "./components/PastEventListingComponent"
-
-
+import RecommendedContentComponent from "./components/RecommendedContentComponent"
 
 class App extends Component {
   render() {
@@ -17,6 +16,7 @@ class App extends Component {
             <Route exact path='/' component={UpcomingEventListingComponent}/>
             <Route path='/upcoming' component={UpcomingEventListingComponent}/>
             <Route path='/past' component={PastEventListingComponent}/>
+            <Route path='/recommended/:id' component={RecommendedContentComponent}/>
           </Switch>
         </div>
       </BrowserRouter>

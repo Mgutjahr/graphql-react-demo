@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import moment from "moment"
+import {Link} from "react-router-dom"
 
 export default class EventCardComponent extends Component {
   render() {
@@ -22,9 +23,14 @@ export default class EventCardComponent extends Component {
           <div className="content">
             {this.props.subline.text}
             <br />
-            <time dateTime="2016-1-1">{moment(this.props.startDate.dateTimeUTC).format('Qo of MMMM hA')} - {moment(this.props.endDate.dateTimeUTC).format('Qo of MMMM hA')}</time>
+            <time dateTime={this.props.startDate}>{moment(this.props.startDate.dateTimeUTC).format('Qo of MMMM hA')} - {moment(this.props.endDate.dateTimeUTC).format('Qo of MMMM hA')}</time>
           </div>
         </div>
+        {this.props.showRecommendedContentLink || this.props.showRecommendedContentLink !== false ? (
+          <footer className="card-footer">
+            <Link className="card-footer-item" to={`/recommended/${this.props.id}`}>Recommended Content</Link>
+          </footer>
+        ) : undefined}
       </div>
     );
   }
@@ -32,6 +38,7 @@ export default class EventCardComponent extends Component {
 
 
 EventCardComponent.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.shape({
     text: PropTypes.string
   }),
@@ -47,5 +54,6 @@ EventCardComponent.propTypes = {
   }),
   featuredMedia: PropTypes.arrayOf(PropTypes.shape({
     imageSrc: PropTypes.string
-  }))
+  })),
+  showRecommendedContentLink: PropTypes.bool
 };
