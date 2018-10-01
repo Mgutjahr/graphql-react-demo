@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBarComponent from "./components/NavBarComponent"
 import UpcomingEventListingComponent from "./components/UpcomingEventListingComponent"
-import PastEventListingComponent from "./PastEventListingComponent"
+import PastEventListingComponent from "./components/PastEventListingComponent"
 
 
 

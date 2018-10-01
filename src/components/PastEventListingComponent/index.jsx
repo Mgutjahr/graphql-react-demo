@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import EventCardListComponent from "../components/EventCardListComponent"
+import EventCardListComponent from "../EventCardListComponent/index"
 
 export default class PastEventListingComponent extends Component {
   render() {
