@@ -6,7 +6,7 @@ export default class UpcomingEventListingComponent extends Component {
     return (
       <div>
         <h1 className="title">Upcoming Events</h1>
-        <EventCardListComponent />
+        <EventCardListComponent query="/v2/query?filter[type]=event-profiles&spaces=redbull_com,rbtv,redbullmusic&filter[startDate][gte]=0d"/>
       </div>
     );
   }

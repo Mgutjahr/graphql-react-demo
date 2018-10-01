@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import moment from "moment"
 import {Link} from "react-router-dom"
+import EVENT_CARD_FRAGMENT from './fragment'
+export {EVENT_CARD_FRAGMENT}
 
 export default class EventCardComponent extends Component {
   render() {
@@ -21,7 +23,7 @@ export default class EventCardComponent extends Component {
           </div>
 
           <div className="content">
-            {this.props.teaser.text}
+            {this.props.teaser ? this.props.teaser.text : ''}
             <br />
             <time dateTime={this.props.startDate}>{moment(this.props.startDate.dateTimeUTC).format('Qo of MMMM hA')} - {moment(this.props.endDate.dateTimeUTC).format('Qo of MMMM hA')}</time>
           </div>
