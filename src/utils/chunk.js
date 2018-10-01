@@ -1,10 +1,10 @@
-export default function chunk(arr, size){
+export default function chunk(arr, size) {
   let chunked = [];
-  for(let ele of arr){
+  for (let ele of arr) {
     let last = chunked[chunked.length - 1]
-    if(!last || last.length === size){
+    if (!last || last.length === size) {
       chunked.push([ele])
-    }else{
+    } else {
       last.push(ele)
     }
   }

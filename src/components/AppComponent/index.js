@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import NavBarComponent from "./components/NavBarComponent"
-import UpcomingEventListingComponent from "./components/UpcomingEventListingComponent"
-import PastEventListingComponent from "./components/PastEventListingComponent"
-import RecommendedContentComponent from "./components/RecommendedContentComponent"
+import NavBarComponent from "../NavBarComponent"
+import UpcomingEventListingComponent from "../UpcomingEventListingComponent"
+import PastEventListingComponent from "../PastEventListingComponent"
+import RecommendedContentComponent from "../RecommendedContentComponent"
 
 import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-client'
@@ -21,7 +21,7 @@ const client = new ApolloClient({
 })
 
 
-class App extends Component {
+class AppComponent extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
@@ -41,4 +41,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AppComponent;

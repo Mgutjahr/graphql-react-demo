@@ -6,7 +6,7 @@ export default class NavBarComponent extends Component {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
+          <a className="navbar-item">
             <img src="https://resources.redbull.com/logos/redbullcom/v1/redbullcom-logo.svg" alt="Redbull Event Listing"
                  width="112" height="28" />
           </a>
