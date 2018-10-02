@@ -7,8 +7,7 @@ export default class NavBarComponent extends Component {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item">
-            <img src="https://resources.redbull.com/logos/redbullcom/v1/redbullcom-logo.svg" alt="Redbull Event Listing"
-                 width="112" height="28" />
+            <img style={{maxHeight: 'inherit'}} src="https://www.datocms-assets.com/7404/1538472536-rbmeetupslogolandscape2.png?w=200&fm=jpg" alt="Redbull Event Listing"/>
           </a>
         </div>
         <div className="navbar-menu">

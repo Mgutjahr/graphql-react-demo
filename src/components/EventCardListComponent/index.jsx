@@ -5,12 +5,10 @@ import chunk from "../../utils/chunk"
 import gql from "graphql-tag"
 import {Query} from "react-apollo"
 import {EVENT_CARD_FRAGMENT} from "../EventCardComponent"
-
-
 const nColumns = 4
 
 const UPCOMING_EVENTS_QUERY = gql`
-    query($queryString: String!) {
+    query eventCardList($queryString: String!) {
         feed(query: $queryString) {
             totalCount
             edges {
