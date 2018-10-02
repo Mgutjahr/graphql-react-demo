@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import EventCardComponent, {EVENT_CARD_FRAGMENT} from "../EventCardComponent"
 import {Query} from "react-apollo"
 import gql from 'graphql-tag'
-import ContentFeedListComponent, {RECOMMENDED_CONTENT_FEED_FRAGMENT} from "../ContentFeedListComponent"
+import RecommendedContentFeedListComponent, {RECOMMENDED_CONTENT_FEED_FRAGMENT} from "../RecommendedContentFeedListComponent"
 
 const EVENT_CARD_QUERY = gql`
     query eventDetailQuery($eventId: String!) {
@@ -31,7 +31,7 @@ export default class RecommendedContentComponent extends Component {
                   <EventCardComponent showRecommendedContentLink={false} {...data.event}/>
                 </div>
                 <div className="column">
-                  <ContentFeedListComponent {...data.event.recommendedContentFeed}/>
+                  <RecommendedContentFeedListComponent {...data.event.recommendedContentFeed}/>
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import RECOMMENDED_CONTENT_FEED_FRAGMENT from './fragment'
 export {RECOMMENDED_CONTENT_FEED_FRAGMENT}
 
-export default class ContentFeedListComponent extends Component {
+export default class RecommendedContentFeedListComponent extends Component {
   render() {
     return (
       <div>

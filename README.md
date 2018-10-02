@@ -44,7 +44,7 @@ Add ApolloProvider
 EventCardListing GQL 
 ```js
 const UPCOMING_EVENTS_QUERY = gql`
-    query {
+    query eventCardList{
         feed(query: "/v2/query?filter[type]=event-profiles&spaces=redbull_com,rbtv,redbullmusic&filter[startDate][gte]=0d") {
             totalCount
             edges {
@@ -163,7 +163,7 @@ const UPCOMING_EVENTS_QUERY = gql`
 Recommended data: 
 ```js
 const EVENT_CARD_QUERY = gql`
-    query($eventId: String!) {
+    query eventDetailQuery($eventId: String!) {
         event: resource(id: $eventId) {
             ...eventCard
         }
@@ -186,3 +186,49 @@ const EVENT_CARD_QUERY = gql`
 EventId from router: 
 * `this.props.match.params.eventId`
 
+## Recommended Content Feed
+Fragment: 
+```js
+import gql from 'graphql-tag'
+
+const RECOMMENDED_CONTENT_FEED_FRAGMENT = gql`
+    fragment recommendedContentFeed on ContentResource {
+        recommendedContentFeed {
+            edges {
+                node {
+                    id
+                    title {
+                        text
+                    }
+                    type
+                    featuredMedia {
+                        ... on Image {
+                            imageSrc(width:128, height:128)
+                        }
+                    }
+                }
+            }
+        }
+    }    
+`
+
+export default RECOMMENDED_CONTENT_FEED_FRAGMENT
+```
+ * `<RecommendedContentFeedListComponent {...data.event.recommendedContentFeed}/>`
+ 
+
+```js
+      <div>
+        {this.props.edges.map(edge => {
+          return (
+            <div className="columns">
+              <div className="column is-one-fifth">
+                <figure className="image is-64x64">
+                  <img src={edge.node.featuredMedia[0].imageSrc}/>
+                </figure>
+              </div>
+              <div className="column">{edge.node.title.text}</div>
+            </div>)
+        })}
+      </div>
+```
