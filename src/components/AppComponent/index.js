@@ -11,8 +11,13 @@ import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
+const GRAPHQL_API_KEY = '<INSERT_API_KEY>'
+
 const httpLink = createHttpLink({
-  uri: 'https://graphql.crepo-production.redbullaws.com/api/graphql'
+  uri: 'https://graphql.crepo-design.redbullaws.com/api/graphql',
+  headers: {
+    'API-Key': GRAPHQL_API_KEY
+  }
 })
 
 const client = new ApolloClient({
